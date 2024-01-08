@@ -1,15 +1,3 @@
-
-
-
-// É PARA SER MANDADO PARA  VERCEL 
-
-
-
-
-
-
-
-
 import cors from "cors"
 //express importado 
 import express from 'express'
