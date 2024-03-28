@@ -1,19 +1,13 @@
-import cors from "cors"
+const cors require ("cors")
 //express importado 
-import express from 'express'
+const express require ('express')
 // uuid importado
-import {v4} from "uuid"
+const {v4} require ("uuid")
 // express passa a ser chamado de app
 const app = express()
 const port = 3001
 app.use(express.json())
 app.use(cors())
-
-//primeiro parametro é o nome da rota
-// segundo é uma função mandando request, response abreviado de req, res
-/*query params => meusite.com/users?name=stanley&age=25 FILTROS
-route params=> /users/2   BUSCAR, DELETAR OU ATUALIZAR ALGO ESPECÍFICO
-request body => {"name":"stanley, "age": 25} */
 
 
 const users = []
@@ -34,16 +28,6 @@ const checkUserId = (req,res,next) => {
     next()
 
 }
-
-// Intercepitador => tem o poder de parar ou alterar dados da requisição 
-// const myFirstMiddleware = (req, res, next) => {
-//     console.log("fui chamado")
-
-//     next()
-//     console.log("finish")
-// }
-
-// app.use(myFirstMiddleware)
 
 app.get('/users', (req, res) => { // get rota criada
     console.log("oi")
